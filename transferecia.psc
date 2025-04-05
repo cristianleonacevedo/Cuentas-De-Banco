@@ -1,4 +1,5 @@
 Algoritmo transferecia
+	// empezamos definiendo nuestras variables.
 	Definir pedido Como Entero;
 	Definir respuesta como entero;
 	Definir saldo_A como entero;
@@ -7,9 +8,17 @@ Algoritmo transferecia
 	Definir menu1 Como Logico;
 	Definir Tcuenta Como Entero;
 	Definir valor como entero;
+
+	// luego asignamos valores a las variables.
 	saldo_A=2000;
 	saldo_b=1200;
+	Menu = Verdadero;
+	Menu1 = Verdadero;
+	
+	//estructuramos el bloque de codigo principal en donde estaran todos los procesos y la pantalla principal.
 	Repetir
+		
+		// creamos nuestro menu/pantalla principal.
 		Escribir "cuenta A";
 		Escribir "";
 		Escribir "Pantalla Principal";
@@ -19,17 +28,19 @@ Algoritmo transferecia
 		Escribir "3.Pedir Dinero";
 		Escribir "4.Cambiar Cuenta";
 		Leer respuesta;
-		Menu = Verdadero;
-		Menu1 = Verdadero;
 		
+		//empezamos a crear los casos posibles.
 		segun respuesta hacer
 			Caso 1:
-			
+				
+			//en caso de que el usuario elija mostrar el saldo.
 				Escribir Sin Saltar "su saldo actual es de: ";
 				Escribir saldo_A;
 				Esperar Tecla;
 				Limpiar Pantalla;
 			Caso 2:
+				
+				//en caso de que el usuario quiera transferir dinero de cuenta A a ceunta B.
 				Escribir "ha que cuenta deseas transferir?";
 				Escribir "";
 				Escribir "1. Cuenta B";
@@ -55,6 +66,8 @@ Algoritmo transferecia
 					
 				FinSi
 			Caso 3:
+				
+				//en caso de que el usuario elija pedir dinero a la cuenta master.
 				Escribir "cuanto deseas pedirle a master?";
 				leer pedido;
 				saldo_A = saldo_A + pedido;
@@ -62,6 +75,9 @@ Algoritmo transferecia
 				esperar Tecla;
 				Limpiar Pantalla;
 			caso 4:
+				
+				//en caso de que el usuario quiera cambiar de cuenta A a Cuenta B.
+				//avisamos al usuario que ha cambiado de cuenta.
 				Limpiar Pantalla;
 				Escribir "Has cambiado a Cuenta B";
 				Esperar Tecla;
@@ -81,11 +97,14 @@ Algoritmo transferecia
 					segun respuesta hacer
 						Caso 1:
 							
+							//en caso de que el usuario quiera.
 							Escribir Sin Saltar "su saldo actual es de: ";
 							Escribir saldo_b;
 							Esperar Tecla;
 							Limpiar Pantalla;
 						Caso 2:
+							
+							//en caso de que el usuario quiera transferir dinero de la Cuenta B a al Cuenta A.
 							Escribir "ha que cuenta deseas transferir?";
 							Escribir "";
 							Escribir "1. Cuenta A";
@@ -110,6 +129,8 @@ Algoritmo transferecia
 								Limpiar Pantalla;	
 							FinSi
 						Caso 3:
+							
+							//en caso de que el usuario quiera perdirle dinero a la cuenta master.
 							Escribir "cuanto deseas pedirle a master?";
 							leer pedido;
 							Escribir "El Dinero Ya Ha Sido Depositado A Tu Cuenta";
@@ -117,6 +138,8 @@ Algoritmo transferecia
 							esperar Tecla;
 							Limpiar Pantalla;
 						caso 4: 
+							
+							//en caso de que el usuario quiera cambiar de cuenta B a Cuenta A.
 							Menu1 = Falso;
 						De Otro Modo:
 							Escribir "Opcion inexistente";
@@ -125,11 +148,15 @@ Algoritmo transferecia
 							
 					FinSegun
 				Mientras Que Menu1	
+				
+				//avisamos al usuario que ha cambiado de cuenta.
 				Limpiar Pantalla;
 				Escribir "Has cambiado a cuenta A";
 				Esperar Tecla;
 				Limpiar Pantalla;
 			De Otro Modo:
+				
+				// si no se elijen ninguno de esos casos.
 				Escribir "Opcion inexistente";
 				Esperar Tecla;
 				Limpiar Pantalla;
